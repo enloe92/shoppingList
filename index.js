@@ -10,7 +10,7 @@ $(function addItem(){
     event.preventDefault();    
     
     const newListItem = $(event.currentTarget).find(`input[id='shopping-list-entry']`).val();
-    
+    $('#shopping-list-entry').val('');
 
     $('.shopping-list').append(`<li>
     <span class="shopping-item">${newListItem}</span>
