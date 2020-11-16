@@ -10,7 +10,7 @@ $(function addItem(){
     event.preventDefault();    
     
     const newListItem = $(event.currentTarget).find(`input[id='shopping-list-entry']`).val();
-    console.log(newListItem);
+    
 
     $('.shopping-list').append(`<li>
     <span class="shopping-item">${newListItem}</span>
@@ -22,21 +22,20 @@ $(function addItem(){
         <span class="button-label">delete</span>
       </button>
     </div>
-  </li>`)
+  </li>`);
   });  
 });
 
 $(function checkMark(){
   $('.shopping-list').on('click','.shopping-item-toggle',function(e){
     e.preventDefault(); 
-    $(e.currentTarget).closest('li').find(`.shopping-item`).toggleClass('shopping-item__checked');
-    
+    $(this).closest('li').find(`.shopping-item`).toggleClass('shopping-item__checked');
   });
 });
 
 $(function deleteItem(){
   $(`.shopping-list`).on(`click`,`.shopping-item-delete`,function(e){
     e.preventDefault(); 
-    $(e.currentTarget).closest('li').remove();
+    $(this).closest('li').remove();
   });
 });
